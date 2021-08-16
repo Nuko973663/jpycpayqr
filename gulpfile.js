@@ -7,7 +7,7 @@ var concat = require("gulp-concat");
 //パス設定
 var paths = {
   jsSrc: "./src",
-  jsDist: "./docs",
+  jsDist: "./src",
 };
 
 //JS圧縮
@@ -15,8 +15,8 @@ var paths = {
 gulp.task("default", function () {
   return gulp.watch(["src/jpycpayqr.min.js"], function () {
     return gulp
-      .src(["src/qrcode.min.js", "src/jpycpayqr.min.js"])
-      .pipe(concat("jpycpayqr.min.js"))
+      .src(["src/web3.min.js", "src/qrcode.min.js", "src/jpycpayqr.min.js"])
+      .pipe(concat("js.min.js"))
       .pipe(gulp.dest(paths.jsDist));
   });
 });

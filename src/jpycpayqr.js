@@ -98,13 +98,17 @@ $(function () {
         await ethereum.enable();
         accounts = await web3.eth.getAccounts();
       } catch (error) {
-        // User denied account access...
+        $("#modal").modal("show");
       }
     }
     // Legacy dapp browsers...
     else if (window.web3) {
-      window.web3 = new Web3(web3.currentProvider);
-      accounts = await web3.eth.getAccounts();
+      try {
+        window.web3 = new Web3(web3.currentProvider);
+        accounts = await web3.eth.getAccounts();
+      } catch (error) {
+        $("#modal").modal("show");
+      }
     }
     // Non-dapp browsers...
     else {

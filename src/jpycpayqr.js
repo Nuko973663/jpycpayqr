@@ -98,7 +98,7 @@ $(function () {
         await ethereum.enable();
         accounts = await web3.eth.getAccounts();
       } catch (error) {
-        $("#modal").modal("show");
+        $("#askMetamask").modal("show");
       }
     }
     // Legacy dapp browsers...
@@ -107,18 +107,18 @@ $(function () {
         window.web3 = new Web3(web3.currentProvider);
         accounts = await web3.eth.getAccounts();
       } catch (error) {
-        $("#modal").modal("show");
+        $("#askMetamask").modal("show");
       }
     }
     // Non-dapp browsers...
     else {
-      $("#modal").modal("show");
+      $("#askMetamask").modal("show");
     }
 
     if (accounts.length > 0) {
       set_dest_addr(accounts[0]);
     } else {
-      $("#modal").modal("show");
+      $("#askMetamask").modal("show");
     }
     get_dest_addr();
   });

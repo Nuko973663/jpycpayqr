@@ -40,6 +40,11 @@ $(function () {
     }
   });
 
+  $("#openMetamask").on("click", () => {
+    window.location.href =
+      "https://metamask.app.link/dapp/nuko973663.github.io/jpycpayqr/";
+  });
+
   $("#version").text(txt_version);
 
   var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -71,7 +76,7 @@ $(function () {
     if (dest_addr === null) {
       dest_addr = default_dest_addr;
     }
-    $("#lbl-dest").text("destination: " + dest_addr);
+    $("#dest").text(dest_addr);
     return dest_addr;
   }
 
@@ -103,9 +108,7 @@ $(function () {
     }
     // Non-dapp browsers...
     else {
-      console.log(
-        "Non-Ethereum browser detected. You should consider trying MetaMask!"
-      );
+      $("#modal").modal("show");
     }
 
     if (accounts.length > 0) {

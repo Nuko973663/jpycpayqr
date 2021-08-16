@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>JPYC Pay QR Generator</title>
+    <title>JPYC QR Pay</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -24,8 +24,7 @@
           src="https://jpyc.jp/static/media/logo2.7646da80.png"
           width="128px"
         />
-        Pay QR Generator
-        <a href="#" id="config"><i class="fa fa-cog" aria-hidden="true"></i></a>
+        QR Pay
       </h1>
 
       <div class="form-group">
@@ -52,7 +51,11 @@
           </div>
         </div>-->
 
-        <small id="lbl-dest" class="form-text text-muted">destination: </small>
+        <small id="lbl-dest" class="form-text text-muted"
+          >destination: <smap id="dest"></smap>
+          <a href="#" id="config"
+            ><i class="fa fa-cog" aria-hidden="true"></i></a
+        ></small>
       </div>
     </div>
 
@@ -194,19 +197,21 @@
     </div>
 
     <!-- Modal Window-->
+    <!---
     <button
       type="button"
       class="btn btn-primary justify-content-center"
       data-toggle="modal"
-      data-target="#exampleModal"
+      data-target="#askMetamask"
     >
-      Launch demo modal
+      Debug
     </button>
+  -->
 
-    <!-- Modal -->
+    <!-- Ask Metamask Modal -->
     <div
       class="modal fade"
-      id="exampleModal"
+      id="askMetamask"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
@@ -227,16 +232,18 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">Opps, unable to access crypt wallet.</div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
             >
-              Close
+              Continue browsing
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" id="openMetamask">
+              Open in Metamask
+            </button>
           </div>
         </div>
       </div>

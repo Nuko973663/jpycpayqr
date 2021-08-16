@@ -1,0 +1,16 @@
+[
+    {
+        "coinName":"JPYC",
+        "contractAddress":"0x6ae7dfc73e0dde2aa99ac063dcf7e8a63265108c",
+        "chainID":"137",
+        "chainName":"Polygon",
+        "logoURL":"https://jpyc.jp/static/media/logo2.7646da80.png"
+    } ,
+    {
+        "coinName":"xWIN",
+        "contractAddress":"0xd88ca08d8eec1e9e09562213ae83a7853ebb5d28",
+        "chainID":"56",
+        "chainName":"BSC",
+        "logoURL":"https://xwin.finance/static/media/xWin-logo.3df56c29.png"
+    } 
+]

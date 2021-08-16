@@ -15,7 +15,11 @@ var paths = {
 gulp.task("default", function () {
   return gulp.watch(["src/jpycpayqr.min.js"], function () {
     return gulp
-      .src(["src/web3.min.js", "src/qrcode.min.js", "src/jpycpayqr.min.js"])
+      .src([
+        "src/lib/web3.min.js",
+        "src/lib/qrcode.min.js",
+        "src/jpycpayqr.min.js",
+      ])
       .pipe(concat("js.min.js"))
       .pipe(gulp.dest(paths.jsDist));
   });

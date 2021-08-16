@@ -29,30 +29,20 @@
 
       <div class="form-group">
         <label for="">Enter amount of JPYC</label>
-        <input
-          type="text"
-          name=""
-          id="amount"
-          class="form-control col-12 col-sm-12"
-          placeholder="1,000 JPYC"
-        />
 
-        <!--
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 input-group-lg">
           <input
+            id="amount"
             type="text"
             class="form-control"
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
-            aria-describedby="basic-addon2"
+            aria-describedby="tokenName"
+            placeholder="1,000"
           />
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">JPYC</span>
-          </div>
-        </div>-->
+          <span class="input-group-text" id="tokenName">JPYC</span>
+        </div>
 
         <small id="lbl-dest" class="form-text text-muted"
-          >destination: <smap id="dest"></smap>
+          >Destination: <smap id="dest"></smap>
           <a href="#" id="config"
             ><i class="fa fa-cog" aria-hidden="true"></i></a
         ></small>
@@ -159,21 +149,44 @@
       </div>
     </div>
 
-    <div class="container">
+    <div
+      class="container"
+      style="margin-top: 1cm; margin-bottom: 1cm; display: none"
+      id="qrcontainer"
+    >
       <div class="row justify-content-center">
-        <div
-          id="qrcode"
-          class="row justify-content-center"
-          style="margin-top: 1cm; margin-bottom: 1cm"
-        ></div>
+        <div class="card" style="width: 22rem">
+          <div class="card-body">
+            <div
+              id="qrcode"
+              class="row justify-content-center"
+              style="margin-bottom: 0.5cm"
+            ></div>
+            <h5 class="card-title">
+              <span id="qrAmount">1000</span>
+              <small class="text-muted">JPYC</small>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <small class="text-muted">To: </small
+              ><small
+                ><span id="destAddress"
+                  >xafd382aCC893127D6fbb197b87453070Fc14D43d</span
+                ></small
+              >
+            </h6>
+            <p class="card-text">
+              <small class="text-muted">Network:</small
+              ><small id="chainName"> Polygon</small>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-top: 1cm">
       <div class="row justify-content-center">
         <small class="form-text text-muted"
-          >JPYC Pay QR Generator ver.
-          <span id="version">version_text</span></small
+          >JPYC QR Pay ver. <span id="version">version_text</span></small
         >
       </div>
       <div class="row justify-content-center">
@@ -183,12 +196,12 @@
       </div>
       <div class="row justify-content-center">
         <a href="https://nuko973663.github.io/" target="_blank">
-          <i class="fa fa-home" aria-hidden="true"></i
-        ></a>
+          <i class="fa fa-home" aria-hidden="true"></i></a
+        >　
 
         <a href="https://twitter.com/nuko973663" target="_blank"
-          ><i class="fa fa-twitter" aria-hidden="true"></i
-        ></a>
+          ><i class="fa fa-twitter" aria-hidden="true"></i></a
+        >　
 
         <a href="https://github.com/Nuko973663" target="_blank"
           ><i class="fa fa-github" aria-hidden="true"></i

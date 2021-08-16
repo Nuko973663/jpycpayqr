@@ -1,12 +1,13 @@
 /**
  * jpycpayqr.js
  * @author nuko973663
- * @version 2021.08.16.0
+ * @version 2021.08.16.1
  */
-const txt_version = "2021.08.16.0";
+const txt_version = "2021.08.16.1";
 var default_dest_addr = "0xafd382aCC893127D6fbb197b87453070Fc14D43d";
 const jpyc_contract_addr = "0x6ae7dfc73e0dde2aa99ac063dcf7e8a63265108c";
 const polygon_chain_id = "137";
+const polygon_chain_name = "Polygon (MATIC)";
 const list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 $(function () {
@@ -27,8 +28,9 @@ $(function () {
   });
   $(id_pref + "generate").on("click", () => {
     if ($("#amount").val.length > 0) {
+      $("#qrcontainer").css("display", "");
       makeCode();
-      move_to_link($("#qrcode"));
+      move_to_link($("#qrcontainer"));
     }
   });
 
@@ -69,6 +71,10 @@ $(function () {
       "e18";
 
     qrcode.makeCode(code);
+
+    $("#qrAmount").text(amount);
+    $("#destAddress").text(dest_addr);
+    $("#chainName").text(polygon_chain_id + " : " + polygon_chain_name);
   }
 
   function get_dest_addr() {

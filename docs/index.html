@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>JPYC Pay QR Generator</title>
+    <title>JPYC QR Pay</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -24,8 +24,7 @@
           src="https://jpyc.jp/static/media/logo2.7646da80.png"
           width="128px"
         />
-        Pay QR Generator
-        <a href="#" id="config"><i class="fa fa-cog" aria-hidden="true"></i></a>
+        QR Pay
       </h1>
 
       <div class="form-group">
@@ -37,7 +36,26 @@
           class="form-control col-12 col-sm-12"
           placeholder="1,000 JPYC"
         />
-        <small id="lbl-dest" class="form-text text-muted">destination: </small>
+
+        <!--
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">JPYC</span>
+          </div>
+        </div>-->
+
+        <small id="lbl-dest" class="form-text text-muted"
+          >destination: <smap id="dest"></smap>
+          <a href="#" id="config"
+            ><i class="fa fa-cog" aria-hidden="true"></i></a
+        ></small>
       </div>
     </div>
 
@@ -154,23 +172,88 @@
     <div class="container">
       <div class="row justify-content-center">
         <small class="form-text text-muted"
-          >JPYC Pay QR Generator ver. 20210811.0</small
+          >JPYC Pay QR Generator ver.
+          <span id="version">version_text</span></small
         >
       </div>
       <div class="row justify-content-center">
         <small class="form-text text-muted"
           >Enjoy crypto life with JPYC!
-          <a href="https://twitter.com/nuko973663" target="_blank"
-            >@nuko973663</a
-          ></small
-        >
+        </small>
+      </div>
+      <div class="row justify-content-center">
+        <a href="https://nuko973663.github.io/" target="_blank">
+          <i class="fa fa-home" aria-hidden="true"></i
+        ></a>
+
+        <a href="https://twitter.com/nuko973663" target="_blank"
+          ><i class="fa fa-twitter" aria-hidden="true"></i
+        ></a>
+
+        <a href="https://github.com/Nuko973663" target="_blank"
+          ><i class="fa fa-github" aria-hidden="true"></i
+        ></a>
       </div>
     </div>
+
+    <!-- Modal Window-->
+    <!---
+    <button
+      type="button"
+      class="btn btn-primary justify-content-center"
+      data-toggle="modal"
+      data-target="#askMetamask"
+    >
+      Debug
+    </button>
+  -->
+
+    <!-- Ask Metamask Modal -->
+    <div
+      class="modal fade"
+      id="askMetamask"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog justify-content-center" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Open in Metamask Browser?
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Opps, unable to access crypt wallet.</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Continue browsing
+            </button>
+            <button type="button" class="btn btn-primary" id="openMetamask">
+              Open in Metamask
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
     <script
@@ -185,6 +268,8 @@
     ></script>
 
     <script src="https://use.fontawesome.com/10580ff14a.js"></script>
-    <script type="text/javascript" src="jpycpayqr.min.js"></script>
+    <script type="text/javascript" src="web3.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <script type="text/javascript" src="jpycpayqr.js"></script>
   </body>
 </html>

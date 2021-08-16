@@ -117,6 +117,8 @@ $(function () {
 
     if (accounts.length > 0) {
       set_dest_addr(accounts[0]);
+    } else {
+      $("#modal").modal("show");
     }
     get_dest_addr();
   });
